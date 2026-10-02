@@ -1,0 +1,17 @@
+1. Báo cáo phân tích:
+- Giải thích hiện tượng giật lag
+Quản lý bộ nhớ (Memory Management): RAM đầy(95%), hệ điều hành phải dùng một phần ổ cứng làm RAM tạm thời(Swap file/Bộ nhớ ảo). Vì ổ cứng chậm hơn RAM rất nhiều, việc liên tục tráo đổi dữ liệu gây ra hiện tượng giật lag
+Quản lý tiến trình (Process Management): Chrome và VS Code mở quá nhiều tiến trình con ngầm làm RAM càng bị quá tải
+- Giải thích qua mô hình "Ban quản lý tòa nhà":
+  User: người dùng
+  Shell: Task Manager — nơi tiếp nhận lệnh từ người dùng và hiển thị trạng thái
+  Kernel: trực tiếp nắm quyền điều khiển, cấp RAM và quản lý tài nguyên 
+  RAM:  nhanh nhưng dung lượng có hạn
+  Storage: rộng rãi nhưng lấy dữ liệu rất chậm
+- Bẫy dữ liệu & trường hợp đặc biệt:
+Bấm End Task tiến trình System máy sẽ bị màn hình xanh và sập ngay vì System là tiến trình chạy nền quan trọng nhất của Kernel
+Khác biệt SSD vs HDD khi RAM đầy:
+  SSD: tốc độ Swap file nhanh, máy bị khựng nhẹ
+  HDD: tốc độ Swap file rất chậm, máy bị đơ cứng (Disk 100%)
+2. Sơ đồ: 
+- Sơ đồ phân tầng: User -> Shell/GUI -> Kernel -> Hardware (CPU/RAM/Storage)
